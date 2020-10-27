@@ -1,0 +1,6 @@
+Требования:
+•	Поле stream должно быть объявлено с модификатором transient.
+•	В методе writeObject(ObjectOutputStream out) не должен быть вызван метод close у потока полученного в качестве параметра.
+•	В методе readObject(ObjectInputStream in) не должен быть вызван метод close у потока полученного в качестве параметра.
+•	В методе readObject(ObjectInputStream in) поле stream должно быть инициализировано новым объектом типа FileOutputStream с параметрами(fileName, true).
+•	В конструкторе класса Solution поле stream должно быть инициализировано новым объектом типа FileOutputStream с параметром(fileName).
