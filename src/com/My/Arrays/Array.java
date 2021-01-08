@@ -1,191 +1,295 @@
 package com.My.Arrays;
-import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Collections;
-import java.util.Scanner;
+
+import java.util.Arrays;
 
 public class Array {
-    public void javaRush() throws IOException {
-        //Заполнение массива из 10 чисел числами от 0 до 9:
-        int[] arr1 = new int[10];    //Создаем объект-массив на 10 элементов
-        for (int i=0;i<10;i++)      //Цикл от 0 до 9
-        {
-            arr1[i] = i;          //В ячейки заносим значения от 0 до 9
-        }
+    //Объявление переменных массива, инициализация проводится в методе
+    int[] num3;
+    int[] num4;
+    int[] num5;
+    int[] num6;
+    int[] num7;
+    int[] num8;
 
-        //Заполнение массива из 10 чисел числами от 1 до 10:
-        int[] arr2 = new int[10];    //Создаем объект-массив на 10 элементов
-        for (int i=0;i<10;i++)      //Цикл от 0 до 9
-        {
-            arr2[i] = i+1;        //В ячейки заносим значения от 10 до 1
-        }
+    public static void main(String[] args)
+    {
+        // Главный метод который вызывает функции(методы)
 
-        //Вывод чисел в обратном порядке
-        Scanner console = new Scanner(System.in);   //Создаем объект Scanner
-        int[] arr3 = new int[10];                  //Создаем объект-массив на 10 элементов
-        for (int i=0;i<10;i++)                    //Цикл от 0 до 9
-        {
-            arr3[i] = console.nextInt();        //Читаем число с клавиатуры и сохраняем его в очередную ячейку массива
-        }
-        for (int i=9;i>=0;i--)                //Цикл от 9 до 0
-        {
-            System.out.println( arr3[i] );  //Выводим на экран очередную ячейку массива
-        }
+        /* Так как методы не static, нужно создать экземпляр класса
+         * и с его(arrayObj) помощью  в методе main() вызывать любые функции или переменные
+         */
+        Array arrayObj = new Array();
 
+        arrayObj.initializationArray();
 
-        Scanner console2 = new Scanner(System.in);   //Создаем объект Scanner
-        int[] arr4 = new int[10];                   //Создаем объект-массив на 10 элементов
-        for (int i=0;i<10;i++)                     //Цикл от 0 до 9
-        {                                         //
-            arr3[i] = console2.nextInt();        //Читаем число с клавиатуры и сохраняем его в очередную ячейку массива
-        }                                       //
-        int min = arr4[0];                     //В качестве минимального числа взяли нулевой элемент массива
-        for (int i=1;i<10;i++)                //Цикл от 1 до 9
-        {                                    //
-            if (arr4[i] < min)              //Если текущий элемент массива меньше «найденного минимального числа»,
-                min = arr4[i];             //то «обновить значение минимального числа»
-        }                                 //
-        System.out.println( min );       //Вывести найденное минимальное число на экран
+        arrayObj.printArray();
 
-        //«вводит с клавиатуры 10 строк и выводит их на экран в обратном порядке»
-        Scanner console3 = new Scanner(System.in);   //Создаем объект Scanner
-        String[] arr5 = new String[10];             //Создаем объект-массив на 10 элементов
-        for (int i=0;i<10;i++)                     //Цикл от 0 до 9
-        {                                         //
-            arr3[i] = console2.nextInt();        //Читаем строку с клавиатуры и сохраняем его в очередную ячейку массива
-        }                                       //
-        for (int i=9;i>=0;i--)                 //Цикл от 9 до 0
-        {                                     //
-            System.out.println( arr5[i] );   //Выводим на экран очередную ячейку массива
-        }
+        System.out.println("\n_________________________________________");
 
-            int[] a1 = new int[20];
-            int[] b2 = new int[10];
-            int[] c3 = new int[10];
-            Scanner sc = new Scanner(System.in);
-            for (int i = 0; i < 20; i++)             //Читаем число с клавиатуры и сохраняем его в a1 массив
-                a1[i] = sc.nextInt();
+        arrayObj.lengthArray();
+        System.out.println("\n_________________________________________");
+
+        arrayObj.mathMinPrintArray();
+        System.out.println("");
+
+        arrayObj.sortArray();
+        System.out.println("\n_________________________________________");
+
+        arrayObj.copyArray();
+        System.out.println("\n_________________________________________");
+
+        arrayObj.equalsArray();
+        System.out.print("\n_________________________________________");
+
+        arrayObj.dArrayInitialization();
+        arrayObj.dArrayPrint();
+        System.out.print("\n_________________________________________");
 
 
-            for (int i = 0; i < 10; i++) {      // Копируем первую половину массива a1 в b2 массив
-                b2[i] = a1[i];
-            }
-            for (int i = 0; i < 10; i++) {    //Копируем вторую половину массива a1 в массив c3
-                c3[i] = a1[i + 10];
-            }
-
-            for (int i = 0; i < 10; i++) { // выводим массив на экран
-                System.out.println(c3[i]);
-            }
-
-        int[] arr = new int[15];
-        int even = 0;
-        int odd = 0;
-        Scanner sc1 = new Scanner(System.in);
-        for (int i = 0; i < 15; i++) {
-            arr[i] = sc1.nextInt();
-            if (i %2 == 0)                        // Счетчик какая сумма в чётных и нечетных индексах массива
-                even += arr[i];
-            else if
-            (i %2 != 0)
-                odd += arr[i];
-        }
-        if (even > odd)
-            System.out.println("В домах с четными номерами проживает больше жителей.");
-        else
-            System.out.println("В домах с нечетными номерами проживает больше жителей.");
     }
-}
- class Array_List{
-     public static void javaRush(String[] args) throws IOException {
-         Reader r = new InputStreamReader(System.in);
-         BufferedReader reader = new BufferedReader(r);
 
-          //ввод строк с клавиатуры
-         ArrayList<String> list = new ArrayList<>();
-         for (int i = 0; i < 10; i++)
-         {
-             String s = reader.readLine();
-             list.add(s);
-         }
-//вывод содержимого коллекции на экран
-//         for (int i = list.size()-1; i >=0; i--)
-//             System.out.println( list.get(i));
+    public void printAll(int[] array)
+    {
+        System.out.println();
+        for (int x : array)
+            System.out.print(x + " ");
+    }
 
-         for (int i = 0; i < list.size(); i++) {
-             int j = list.size() - i - 1;
-             System.out.println( list.get(j) );
-         }
-//То же, чётные числа добавляются в конец списка, нечётные — в начало.
-         BufferedReader reader4 = new BufferedReader(new InputStreamReader(System.in));
-         ArrayList<Integer> list3 = new ArrayList<Integer>();
+    // Метод который выводит длину массива
+    public void lengthArray()
+    {
+        System.out.print("Длина массива = " + num4.length);
+    }
 
-         while (true)
-         {
-             String s = reader.readLine();
-             if (s.isEmpty()) break;
+    // Инициализация массива
+    public void initializationArray()
+    {
+        int[] num1 = new int[10]; // Массив из 10 чисел (пустой)
+        int num2[] = new int[10]; // Массив из 10 чисел (пустой)
 
-             int x = Integer.parseInt(s);
-             if (x % 2 == 0)  //проверяем, что остаток от деления на два равен нулю
-                 list3.add(x);          //добавление в конец
-             else
-                 list3.add(0, x);      //вставка в начало
-         }
-//Удаление всех чисел больше 5:
-         BufferedReader reader3 = new BufferedReader(new InputStreamReader(System.in) );
-         ArrayList<Integer> list2 = new ArrayList<>();
-         list2.add(1);
-         list2.add(7);
-         list2.add(11);
-         list2.add(3);
-         list2.add(15);
-         for (int i = 0; i < list.size(); )    //убрали увеличение i внутрь цикла
-         {
-             if (list2.get(i) > 5)
-                 list2.remove(i);          //не увеличиваем i, если удалили текущий  элемент
-             else
-                 i++;
-         }
-//Разделение массива на два — чётных и нечётных чисел
-         //статическая инициализация массива
-         int[] data = {1, 5, 6, 11, 3, 15, 7, 8};
+        // Устанавливаем значения элементов массива (вариант 1)
+        num3 = new int[]{1,2,3,4,5,6,7,8,9,10}; // Массив из 10 чисел
 
-         //создание списка, где все элементы должны быть типа Integer
-         ArrayList<Integer> list1 = new ArrayList<> ();
+        // Устанавливаем значения элементов массива (вариант 2)
+        // Индексация элементов массива начинается с 0
+        num4 = new int[4];
+        num4[0] = 1;
+        num4[1] = 2;
+        num4[2] = 3;
+        num4[3] = 4;
 
-         //заполнение списка из массива
-         for (int i = 0; i < data.length; i++) list1.add(data[i]);
+        //Заполнение массива из 10 чисел числами от 0 до 9: в цикле FOR
+        num5 = new int[10];    //Создаем объект-массив на 10 элементов
+        for (int i = 0; i < 10; i++)      //Цикл от 0 до 9
+        {
+            num5[i] = i;          //В ячейки заносим значения от 0 до 9
+        }
+    }
 
-         ArrayList<Integer> even = new ArrayList<>();  //чётные
-         ArrayList<Integer> odd = new ArrayList<>();    //нечётные
+    // Метод который выводит в консоль данные массивов
+    public void printArray()
+    {
+        //Вывод данных массива, выводится при помощи цикла FOR
+        System.out.println("Вывод данных массива вариант 1 ");
+        for (int i = 0; i < num3.length; i++)
+        {
+            System.out.print(num3[i] + " ");    //Выводим на экран очередную ячейку массива + пробел
+        }
+//_________________________________________________________________
 
-         for (int i = 0; i < list1.size(); i++)
-         {
-             Integer x = list1.get(i);
-             if (x % 2 == 0)    //если x - чётное
-                 even.add(x);   // добавляем x в коллекцию четных чисел
-             else
-                 odd.add(x);    // добавляем x в коллекцию нечетных чисел
-         }
+        System.out.println("");
+        //Вывод данных массива, выводится при помощи цикла FOR EACH
+        System.out.println("Вывод данных массива вариант 2 ");
+        for (int x : num4)
+            System.out.print(x + " ");         //Выводим на экран очередную ячейку массива + пробел
 
-         //Слияние списков.
-         ArrayList<Integer> list5 = new ArrayList<>();   //создание списка
-         Collections.addAll(list5, 1, 5, 6, 11, 3, 15, 7, 8);   //заполнение списка
+        System.out.print("\nВывод данных массива вариант 3 ");
+                   printAll(num3);  //Вызов метода который выводит данные принимая в качестве параметра массив
 
-         ArrayList<Integer> list6 = new ArrayList<>();
-         Collections.addAll(list6, 1, 8, 6, 21, 53, 5, 67, 18);
+            System.out.println("\n_________________________________________");
+//_________________________________________________________________
 
-         ArrayList<Integer> result = new ArrayList<>();
+        //Вывод данны в обратном порядке
+        System.out.println("Вывод данных массива в обратном порядке ");
+        for (int i = 9;i >= 0; i--)             //Цикл от 9 до 0
+        {
+            System.out.print( num5[i] + " ");  //Выводим на экран очередную ячейку массива + пробел
+        }
+    }
 
-         result.addAll(list1);   //добавление всех значений из одного списка в другой
-         result.addAll(list2);
+    // Метод который выводит минимальное число в массиве
+    public void mathMinPrintArray()
+    {
+        num6 = new int[] {-22, 15, 55, 40, 90, -155};
+        //Минимальное число, вариант 1
+        int min1 = num6[0];             //В качестве стартового числа взяли нулевой элемент массива
 
-         for (Integer x : result)   //быстрый for по всем элементам, только для коллекций
-         {
-             System.out.println(x);
-         }
-     }
+        for (int i = 1; i < num6.length; i++)
+        {
+            if (num6[i] < min1)        //Если текущий элемент массива меньше «найденного минимального числа»,
+                min1 = num6[i];       //то «обновить значение минимального числа»
+        }
+        System.out.print("Минимальное число = " + min1 );
+        System.out.println("\n_________________________________________");
+//___________________________________________________________________________________________________
+
+        //Минимальное число, вариант 2
+        int min2 = Integer.MAX_VALUE;  //
+
+        for (int x : num6) min2 = Math.min(min2, x);
+
+        System.out.print("Минимальное число = " + min2 );
+        System.out.print("\n_________________________________________");
+    }
+
+    // Метод сортировки массивов
+    public void sortArray()
+    {
+        num7 = new int[] {8, 3, 4 , 9, 1, 6, 2, 5, 7, 10};
+        num8 = new int[] {8, 3, 4 , 9, 1, 6, 2, 5, 7, 10};
+        //Сортировка пузырьком
+        System.out.print("Отсортированный массив №1");
+        boolean isSorted = false;
+        while (!isSorted)
+        {
+                isSorted = true;
+        for (int i = 1; i < num7.length; i++) //Цикл идёт с первого индекса для того чтоб сравнивать с нулевым
+            {
+                if (num7[i] < num7[i - 1])   //Если число в ячейке [i] меньше чем число слева
+                {
+                    int temp = num7[i];      //То переменная temp равна этому числу
+                    num7[i] = num7[i - 1];   //А ячейка [i] в этом месте равна числу слева
+                    num7[i - 1] = temp;      //Ячейка слева [i -1] равна переменной temp которая хранила минимальное число
+                    isSorted = false;
+                }
+            }
+        }
+        printAll(num7);
+            System.out.println();
+//______________________________________________________________________________________________________________________
+        //Сортировка методом sort класса Arrays
+        Arrays.sort(num8);
+        System.out.print("Отсортированный массив №2\n");
+        for (int x: num8)  // Вывод в консоль
+        System.out.print(x + " ");
+    }
+
+
+    // Метод который копирует данные из какого-то массива
+    public void copyArray()
+    {
+        //Первый массив
+        int[] num = new int[] {9, 9, 9, 9, 9};
+
+        //Копия первого массива
+        System.out.print("Копия массива");
+        int[] result1 = Arrays.copyOf(num, num.length);
+        printAll(result1);
+
+        //Копируя в массив большего размера, то пустые элементы заполнятся нулями
+        int[] result2 = Arrays.copyOf(num, 10);
+        printAll(result2);
+    }
+
+    //Метод который сравнивает массивы
+    public void equalsArray()
+    {
+        int[] nums1 = new int[5];
+        int[] nums2 = new int[5];
+        Arrays.fill(nums1, 6);
+        Arrays.fill(nums2, 6);
+        //
+        System.out.print("Сравнение массивов = " + Arrays.equals(nums1, nums2));
+    }
+
+
+    //ДВУМЕРНЫЕ МАССИВЫ
+    int[][] dNum1;
+    int[][] dNum2;
+    int[][] dNum3;
+    String[][] dNum4;
+    String[][] dNum5;
+
+    public void dArrayInitialization()
+    {
+        //Объявление двумерного массива размером 4 на 5
+        dNum1 = new int[4][5];
+
+        //Инициализация двумерного массива вариант 1
+        dNum2 = new int[][] { {1, 2, 3, 4},  {5, 6, 7, 8, 9} };
+
+        //Инициализация двумерного массива вариант 2
+        dNum3 = new int[4][4];
+        dNum3[0][0] = 1;  dNum3[2][0] = 9;
+        dNum3[0][1] = 2;  dNum3[2][1] = 10;
+        dNum3[0][2] = 3;  dNum3[2][2] = 11;
+        dNum3[0][3] = 4;  dNum3[2][3] = 12;
+
+        dNum3[1][0] = 5;  dNum3[3][0] = 13;
+        dNum3[1][1] = 6;  dNum3[3][1] = 14;
+        dNum3[1][2] = 7;  dNum3[3][2] = 15;
+        dNum3[1][3] = 8;  dNum3[3][3] = 16;
+
+//Массив Black and White в виде шахматной доски
+        dNum4 = new String[8][8];  //Объявление размера массива
+        for (int i = 0; i < dNum4.length; i++) //По строкам
+        {
+            for (int j = 0; j < dNum4.length; j++)   //По столбцам
+            {
+                if ((i + j) % 2 == 0) dNum4[i][j] = "W";
+                else dNum4[i][j] = "B";
+            }
+        }
+
+//Массив заполнен индексами ячеек, сделал для наглядности
+        dNum5 = new String[8][8];  //Объявление размера массива
+        for (int i = 0; i < dNum5.length; i++) //По строкам
+        {
+            for (int j = 0; j < dNum5.length; j++)  //По столбцам
+            {
+                dNum5[i][j] = " " + i + "." + + j;
+            }
+        }
+    }
+
+    public void dArrayPrint()
+    {
+
+        System.out.println("\nВывод двумерного массива вариант 1");
+        for (int[] x : dNum3)
+        {
+            for (int j = 0; j < dNum3.length; j++)
+            {
+                System.out.print(" " + x[j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nВывод двумерного массива вариант 2");
+        System.out.print(Arrays.deepToString(dNum3));
+        System.out.print("\n_________________________________________");
+
+
+        System.out.println("\nВывод двумерного массива шахматная доска");
+        for (String[] strings : dNum4)
+        {
+            for (int j = 0; j < dNum4.length; j++)
+            {
+                System.out.print(" " + strings[j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.print("\n_________________________________________");
+
+        System.out.println("\nВывод двумерного массива с индексами");
+        for (String[] strings : dNum5)
+        {
+            for (int j = 0; j < dNum5.length; j++)
+            {
+                System.out.print(" " + strings[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
