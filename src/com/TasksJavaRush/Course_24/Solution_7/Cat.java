@@ -29,6 +29,7 @@ public class Cat implements Pet {
      * @param i количество букв 'я' в слове мяу
      * @return экземпляр класса CatPet
      */
+
     public Sayable toSayable(final int i) {
         return null;
     }
