@@ -1,4 +1,4 @@
-package com.TasksJavaRush.Course_16.Solution_22_;
+package com.TasksJavaRush.Course_16.Solution_22;
 
 public interface Message
 {
