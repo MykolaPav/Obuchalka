@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Head First Java/Head First Java.iml" filepath="$PROJECT_DIR$/Head First Java/Head First Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaRush/JavaRush.iml" filepath="$PROJECT_DIR$/JavaRush/JavaRush.iml" />
       <module fileurl="file://$PROJECT_DIR$/Obuchalka.iml" filepath="$PROJECT_DIR$/Obuchalka.iml" />
     </modules>
   </component>
